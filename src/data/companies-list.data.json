@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "c001",
+    "name": "Google"
+  },
+  {
+    "_id": "c002",
+    "name": "Amazon"
+  },
+  {
+    "_id": "c003",
+    "name": "Atlassian"
+  },
+  {
+    "_id": "c004",
+    "name": "FactSet"
+  },
+  {
+    "_id": "c005",
+    "name": "Razorpay"
+  }
+]

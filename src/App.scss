@@ -1,0 +1,82 @@
+@use "styles/variables";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: variables.$background-color;
+  font-size: 1.6rem;
+}
+
+.container {
+  margin: auto;
+  max-width: 110rem;
+  padding: 4rem;
+}
+
+// list --------
+
+.list {
+  list-style: none;
+  padding: 4rem 0;
+}
+
+.list-item {
+  margin-bottom: 3rem;
+}
+
+// link --------
+
+.link {
+  color: variables.$primary-color;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:is(:visited, :hover) {
+    color: variables.$primary-color-500;
+  }
+}
+
+// heading --------
+
+.heading-1 {
+  color: variables.$text-color-700;
+  font-size: 6rem;
+}
+
+.heading-2 {
+  font-size: 2rem;
+}
+
+// main --------
+
+main {
+  border-right: thin solid variables.$text-color-700;
+}
+
+// author --------
+
+.author-para {
+  margin-top: 1rem;
+
+  strong {
+    color: variables.$text-color-700;
+  }
+
+  .profile-link {
+    margin-left: 0.5rem;
+    text-decoration: underline dotted;
+  }
+}

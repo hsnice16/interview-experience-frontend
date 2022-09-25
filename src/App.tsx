@@ -8,7 +8,7 @@ export const App = (): React.ReactElement => {
     <div className="container">
       <header>
         <h1 className="heading">Interview Experiences</h1>
-        <input type="text" />
+        {/* <input type="text" /> */}
       </header>
 
       <main>

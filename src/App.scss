@@ -21,62 +21,31 @@ body {
 }
 
 .container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr auto;
   margin: auto;
   max-width: 110rem;
   padding: 4rem;
 }
 
-// list --------
+header {
+  grid-area: 1/1/1/-1;
 
-.list {
-  list-style: none;
-  padding: 4rem 0;
-}
-
-.list-item {
-  margin-bottom: 3rem;
-}
-
-// link --------
-
-.link {
-  color: variables.$primary-color;
-  text-decoration: none;
-  transition: color 0.2s;
-
-  &:is(:visited, :hover) {
-    color: variables.$primary-color-500;
+  .heading {
+    color: variables.$text-color-700;
+    font-size: 6rem;
   }
 }
-
-// heading --------
-
-.heading-1 {
-  color: variables.$text-color-700;
-  font-size: 6rem;
-}
-
-.heading-2 {
-  font-size: 2rem;
-}
-
-// main --------
 
 main {
-  border-right: thin solid variables.$text-color-700;
+  border-right: thin dotted variables.$text-color-700;
+  grid-area: 2/1/-1/9;
+  margin-top: 4rem;
 }
 
-// author --------
-
-.author-para {
-  margin-top: 1rem;
-
-  strong {
-    color: variables.$text-color-700;
-  }
-
-  .profile-link {
-    margin-left: 0.5rem;
-    text-decoration: underline dotted;
-  }
+aside {
+  grid-area: 2/9/-1/-1;
+  margin-top: 4rem;
+  padding-left: 2rem;
 }

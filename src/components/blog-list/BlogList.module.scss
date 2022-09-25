@@ -1,0 +1,46 @@
+@use "styles/variables";
+
+.list {
+  list-style: none;
+
+  .item {
+    margin-bottom: 3rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .link {
+    color: variables.$primary-color;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:is(:visited, :hover) {
+      color: variables.$primary-color-500;
+    }
+  }
+
+  .open-in-new {
+    height: 20px;
+    width: 20px;
+
+    path {
+      transform: scale(0.3);
+      translate: 6px 6px;
+    }
+  }
+
+  .author-para {
+    margin-top: 1rem;
+
+    strong {
+      color: variables.$text-color-700;
+    }
+
+    .profile-link {
+      margin-left: 0.5rem;
+      text-decoration: underline dotted;
+    }
+  }
+}

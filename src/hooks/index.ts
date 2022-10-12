@@ -1,0 +1,1 @@
+export { initResizeEventListener } from "./initResizeEventListener";

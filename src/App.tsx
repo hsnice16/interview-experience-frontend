@@ -1,23 +1,31 @@
 import "./App.scss";
-import React from "react";
-import { CompaniesList, ExperiencesList } from "data";
-import { BlogList, CompanyFilter } from "components";
+import React, { useRef } from "react";
+import { CompaniesList } from "data";
+import { BlogList, CompanyFilter, FooterLinks } from "components";
+import { initResizeEventListener } from "hooks";
 
 export const App = (): React.ReactElement => {
+  const asideRef = useRef<HTMLElement>();
+
+  initResizeEventListener()(asideRef);
+
   return (
     <div className="container">
       <header>
         <h1 className="heading">Interview Experiences</h1>
-        {/* <input type="text" /> */}
       </header>
 
       <main>
-        <BlogList experiences={ExperiencesList} />
+        <BlogList />
       </main>
 
-      <aside>
+      <aside ref={asideRef}>
         <CompanyFilter companies={CompaniesList} />
       </aside>
+
+      <footer>
+        <FooterLinks />
+      </footer>
     </div>
   );
 };

@@ -1,0 +1,20 @@
+@use "styles/variables";
+
+.list {
+  grid-area: 1/6/1/7;
+  list-style: none;
+
+  .item {
+    margin-bottom: 1rem;
+
+    a {
+      color: variables.$text-color-600;
+      font-size: 1.8rem;
+      text-decoration: none;
+
+      &:hover {
+        color: variables.$text-color-700;
+      }
+    }
+  }
+}

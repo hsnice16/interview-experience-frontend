@@ -2,15 +2,15 @@ import React from "react";
 import { OpenInNew } from "assets";
 import styles from "./BlogList.module.scss";
 import classNames from "classnames";
+import { useRecoilValue } from "recoil";
+import { filteredExperiencesState } from "recoil/selectors";
 
-type BlogListProps = {
-  experiences: Experience[];
-};
+export const BlogList = () => {
+  const filteredExperiences = useRecoilValue(filteredExperiencesState);
 
-export const BlogList = ({ experiences }: BlogListProps) => {
   return (
     <ul className={styles.list}>
-      {experiences.map(({ _id, author, blog }) => (
+      {filteredExperiences.map(({ _id, author, blog }) => (
         <li className={styles.item} key={_id}>
           <h2 className={styles.heading}>
             <a

@@ -53,5 +53,16 @@
       "heading": "My FrontEnd Interview Experience At Razorpay",
       "link": "https://dev.to/anuraghazra/my-frontend-interview-experience-at-razorpay-29bo"
     }
+  },
+  {
+    "_id": "exp006",
+    "author": {
+      "name": "Yashika Jothwani",
+      "profile": "https://www.linkedin.com/in/yashika-jothwani-03a0061b7/"
+    },
+    "blog": {
+      "heading": "Interviewing at Google: My Experience! 💻",
+      "link": "https://medium.com/@yashikajotwani12/interviewing-at-google-my-experience-3e8c45180545"
+    }
   }
 ]

@@ -12,7 +12,7 @@ export const App = (): React.ReactElement => {
   return (
     <div className="container">
       <header>
-        <h1 className="heading">Interview Experiences</h1>
+        <h1 className="heading">Interview Experience</h1>
       </header>
 
       <main>

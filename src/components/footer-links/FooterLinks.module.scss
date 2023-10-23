@@ -4,7 +4,7 @@
   list-style: none;
 
   &.page-links {
-    grid-area: 1/7/1/9;
+    grid-area: 1/8/1/9;
   }
 
   &.social-links {
@@ -22,6 +22,18 @@
       &:hover {
         color: variables.$text-color-700;
       }
+    }
+  }
+
+  @media screen and (max-width: 45em) {
+    &.page-links {
+      grid-area: 1/7/1/9;
+    }
+  }
+
+  @media screen and (max-width: 39.5em) {
+    &.page-links {
+      grid-area: 1/5/1/9;
     }
   }
 }

@@ -51,6 +51,9 @@
         font-size: 1.5rem;
         padding: 0.5rem;
         transition: background-color 0.2s, color 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
 
         &:hover,
         &.selected {
@@ -60,6 +63,16 @@
 
         &.selected:hover {
           background-color: variables.$primary-color-300;
+        }
+
+        .blog-count {
+          width: 2rem;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          display: inline-block;
+          background-color: variables.$primary-color-500;
+          color: variables.$background-color;
+          font-size: 1rem;
         }
       }
     }

@@ -1,0 +1,37 @@
+@use "styles/variables";
+
+.modal-container {
+  position: fixed;
+  inset: 0;
+  background-color: variables.$modal-background-color;
+  display: flex;
+  z-index: 1;
+
+  .modal {
+    background-color: variables.$white-color;
+    margin: auto;
+    max-width: 45rem;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.75rem;
+    color: variables.$text-color-700;
+    gap: 2rem;
+    box-shadow: 0.25px 0.25px 0.5px variables.$text-color-600;
+
+    .error {
+      color: variables.$red-color-500;
+    }
+
+    button {
+      background-color: variables.$primary-color-500;
+      color: variables.$background-color;
+      padding: 0.75rem 1.25rem;
+      cursor: pointer;
+      border: none;
+      font-size: 1.5rem;
+      margin-left: auto;
+    }
+  }
+}

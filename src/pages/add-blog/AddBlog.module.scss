@@ -1,0 +1,87 @@
+@use "styles/variables";
+
+.form {
+  margin: 2rem 0 10rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+
+  & > div {
+    background-color: variables.$white-color;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    max-width: 50rem;
+    box-shadow: 0.25px 0.25px 0.5px variables.$text-color-600;
+
+    & > p {
+      font-size: 2.5rem;
+      color: variables.$text-color-600;
+      font-weight: 600;
+    }
+
+    .author-info {
+      margin-top: 2rem;
+      background-color: variables.$background-color;
+      padding: 1rem;
+      border-radius: 0.5rem;
+
+      p {
+        font-size: 2rem;
+        font-weight: 600;
+        color: variables.$text-color-600;
+      }
+
+      label {
+        margin-top: 0;
+      }
+
+      input {
+        margin-top: 0.5rem;
+      }
+
+      div {
+        margin-top: 1rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        background-color: variables.$white-color;
+        display: flex;
+        gap: 1rem;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  & > p {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.25rem;
+
+    button {
+      background-color: variables.$primary-color-500;
+      color: variables.$background-color;
+      padding: 0.75rem 1.25rem;
+      cursor: pointer;
+      border: none;
+      font-size: 1.5rem;
+
+      &:disabled {
+        pointer-events: none;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  @media screen and (max-width: 39.5em) {
+    & {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0;
+    }
+  }
+}

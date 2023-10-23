@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./FooterLinks.module.scss";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
+import { ROUTE_ADD_BLOG, ROUTE_HOME } from "utils/constants/routes";
 
 const SOCIAL_LINKS = [
   {
@@ -22,10 +24,10 @@ export const FooterLinks = () => {
     <>
       <ul className={classNames(styles.list, styles["page-links"])}>
         <li className={styles.item}>
-          <a href="/">Home</a>
+          <Link to={ROUTE_HOME}>Home</Link>
         </li>
         <li className={styles.item}>
-          <a href="/">Add a new blog</a>
+          <Link to={ROUTE_ADD_BLOG}>Add Blog</Link>
         </li>
       </ul>
 

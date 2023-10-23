@@ -1,0 +1,63 @@
+@use "styles/variables";
+
+.header-internal-dashboard {
+  display: flex;
+  align-items: center;
+
+  button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.75rem;
+    padding: 1rem 1.5rem;
+    border-bottom: medium solid variables.$primary-color;
+    cursor: pointer;
+    color: variables.$primary-color;
+    transition: background-color 0.3s;
+
+    &.selected,
+    &.selected:hover {
+      background-color: variables.$primary-color-200;
+    }
+
+    &:hover {
+      background-color: variables.$primary-color-100;
+    }
+  }
+}
+
+.list {
+  list-style: none;
+
+  .item {
+    margin-bottom: 3rem;
+    border-bottom: thin solid variables.$primary-color-100;
+    padding-bottom: 1rem;
+
+    .btn-mutation-action-container {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+
+      button {
+        border: none;
+        color: variables.$background-color;
+        padding: 1rem 1.25rem;
+        cursor: pointer;
+
+        &:disabled {
+          pointer-events: none;
+          opacity: 0.8;
+        }
+      }
+
+      .approve {
+        background-color: variables.$green-color-500;
+      }
+
+      .reject {
+        background-color: variables.$red-color-500;
+      }
+    }
+  }
+}

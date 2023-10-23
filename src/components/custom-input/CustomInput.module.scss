@@ -1,0 +1,40 @@
+@use "styles/variables";
+
+label {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: variables.$text-color-600;
+
+  span {
+    color: variables.$red-color-500;
+  }
+}
+
+input {
+  width: 100%;
+  font-size: 1.65rem;
+  margin-top: 1rem;
+  padding: 1rem 0.75rem;
+  color: variables.$text-color-600;
+  border-radius: 0.5rem;
+  border: 0.25px solid variables.$text-color-600;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-input-placeholder {
+    opacity: 0.5;
+  }
+
+  &:-moz-placeholder {
+    opacity: 0.5;
+  }
+}
+
+.input-error {
+  font-size: 1.25rem;
+  color: variables.$red-color-500;
+}

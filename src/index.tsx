@@ -6,7 +6,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const client = new ApolloClient({
-  uri: "https://interview-experience-backend.onrender.com/",
+  uri: "http://ec2-34-218-222-162.us-west-2.compute.amazonaws.com:4000/",
   cache: new InMemoryCache(),
 });
 

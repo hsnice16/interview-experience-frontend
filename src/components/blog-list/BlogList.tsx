@@ -8,7 +8,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { ROUTE_HOME } from "utils/constants/routes";
 import { Blog } from "components";
 
-const SHOW_MAX = 12;
+const SHOW_MAX = 15;
 
 export const BlogList = () => {
   const selectedCompany = useRecoilValue(selectedCompanyState);
@@ -19,13 +19,19 @@ export const BlogList = () => {
 
   const { data, loading } = useQuery(GET_BLOGS, {
     variables: {
-      limit: 13,
+      limit: SHOW_MAX + 1,
       offset: SHOW_MAX * searchedPage,
       filter: {
         forOrganization: selectedCompany,
       },
     },
   });
+
+  // shuffle the blogs
+  const blogs = useMemo(
+    () => [...(data?.blogs ?? [])].sort((a, b) => 0.5 - Math.random()),
+    [data?.blogs]
+  );
 
   useEffect(() => {
     window.scroll({ top: 0, behavior: "smooth" });
@@ -35,8 +41,8 @@ export const BlogList = () => {
     <ul className={styles.list}>
       {loading ? "Loading..." : null}
 
-      {data && data.blogs
-        ? data.blogs.map(({ _id, author, link, title }, index) => {
+      {blogs.length > 0
+        ? blogs.map(({ _id, author, link, title }, index) => {
             if (index === SHOW_MAX) return null;
 
             return (
@@ -47,7 +53,7 @@ export const BlogList = () => {
           })
         : null}
 
-      {data && data.blogs && data.blogs.length === SHOW_MAX + 1 && (
+      {blogs.length > 0 && blogs.length === SHOW_MAX + 1 && (
         <Link
           to={`${ROUTE_HOME}?p=${searchedPage + 1}`}
           className={styles.more}

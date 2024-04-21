@@ -29,10 +29,12 @@
 
   strong {
     color: variables.$text-color-700;
+    opacity: 0.75;
   }
 
   .profile-link {
     margin-left: 0.5rem;
     text-decoration: underline dotted;
+    opacity: 0.88;
   }
 }

@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./AdBannerDrawer.module.scss";
 import { DownArrow } from "assets";
 import classNames from "classnames";
 
 export function AdBannerDrawer() {
-  const [isOpen, setIsOpen] = useState(
-    localStorage.getItem("ad-banner-drawer") === "closed" ? false : true
-  );
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    function handleDocumentLoad() {
+      setTimeout(() => {
+        setIsOpen(
+          localStorage.getItem("ad-banner-drawer") === "closed" ? false : true
+        );
+      }, 300);
+    }
+
+    window.addEventListener("load", handleDocumentLoad);
+    return () => window.removeEventListener("load", handleDocumentLoad);
+  }, []);
 
   const handleDownArrowClick = () => {
     localStorage.setItem("ad-banner-drawer", isOpen ? "closed" : "open");

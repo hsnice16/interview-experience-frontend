@@ -1,0 +1,64 @@
+@use "styles/variables";
+
+.ad-banner-drawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: variables.$white-color;
+  padding: 5.2rem 4.2rem 8rem;
+  box-shadow: 0 -0.2rem 3.2rem 0.8rem variables.$modal-background-color;
+  border-radius: 0.8rem 0.8rem 0 0;
+  border-top: 0.04rem solid variables.$modal-background-color;
+  font-size: 1.8rem;
+  color: variables.$text-color-600;
+  transition: transform 0.3s;
+
+  button {
+    position: absolute;
+    width: 5.2rem;
+    background-color: variables.$white-color;
+    border: none;
+    border-radius: 1rem 1rem 0 0;
+    padding: 0.2rem;
+    top: -2.4rem;
+    display: flex;
+    left: 2rem;
+    cursor: pointer;
+    border-top: 0.04rem solid variables.$modal-background-color;
+
+    .down-arrow {
+      transition: transform 0.2s;
+      margin: auto;
+    }
+  }
+
+  a {
+    color: variables.$primary-color;
+    text-decoration: none;
+    transition: color 0.2s;
+    margin-right: 0.4rem;
+
+    &:is(:visited, :hover) {
+      color: variables.$primary-color-500;
+    }
+  }
+
+  span {
+    display: inline-block;
+    margin-left: -0.2rem;
+    margin-right: 0.4rem;
+  }
+
+  &.close {
+    transform: translateY(100%);
+    transition: transform 0.3s;
+
+    button {
+      .down-arrow {
+        transition: transform 0.3s;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

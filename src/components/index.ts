@@ -5,3 +5,4 @@ export { CustomInput } from "./custom-input/CustomInput";
 export { MessageModal } from "./message-modal/MessageModal";
 export { InternalDashboard } from "./internal-dashboard/InternalDashboard";
 export { Blog } from "./blog/Blog";
+export { AdBannerDrawer } from "./ad-banner-drawer/AdBannerDrawer";

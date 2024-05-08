@@ -1,6 +1,6 @@
 import "./App.scss";
 import React from "react";
-import { FooterLinks } from "components";
+import { AdBannerDrawer, FooterLinks } from "components";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "pages/home/Home";
 import { AddBlog } from "pages/add-blog/AddBlog";
@@ -29,6 +29,8 @@ export const App = (): React.ReactElement => {
       <footer>
         <FooterLinks />
       </footer>
+
+      <AdBannerDrawer />
     </div>
   );
 };

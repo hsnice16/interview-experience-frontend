@@ -17,6 +17,17 @@
       color: variables.$primary-color;
     }
   }
+
+  @media screen and (max-width: 45em) {
+    img {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    & {
+      grid-area: 1/1/1/6;
+    }
+  }
 }
 
 .list {
@@ -45,13 +56,17 @@
 
   @media screen and (max-width: 45em) {
     &.page-links {
-      grid-area: 1/7/1/9;
+      grid-area: 1/9/1/11;
+    }
+
+    &.social-links {
+      grid-area: 1/11/1/-1;
     }
   }
 
   @media screen and (max-width: 39.5em) {
     &.page-links {
-      grid-area: 1/5/1/9;
+      grid-area: 1/8/1/10;
     }
   }
 }

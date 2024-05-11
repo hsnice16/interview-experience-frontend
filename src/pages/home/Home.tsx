@@ -1,13 +1,15 @@
-import { BlogList, CompanyFilter } from "components";
+import { BlogList, CompanyFilter, KeywordFilter } from "components";
 import { initResizeEventListener } from "hooks";
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ROUTE_HOME } from "utils/constants/routes";
 
 export function Home() {
-  const asideRef = useRef<HTMLElement>();
+  const rightAsideRef = useRef<HTMLElement>();
+  const leftAsideRef = useRef<HTMLElement>();
 
-  initResizeEventListener()(asideRef);
+  initResizeEventListener()({ ref: leftAsideRef, type: "keyword" });
+  initResizeEventListener()({ ref: rightAsideRef, type: "company" });
 
   return (
     <>
@@ -17,11 +19,15 @@ export function Home() {
         </Link>
       </header>
 
+      <aside className="left" ref={leftAsideRef}>
+        <KeywordFilter />
+      </aside>
+
       <main className="main-home">
         <BlogList />
       </main>
 
-      <aside ref={asideRef}>
+      <aside className="right" ref={rightAsideRef}>
         <CompanyFilter />
       </aside>
     </>

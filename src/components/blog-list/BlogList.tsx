@@ -63,6 +63,13 @@ export const BlogList = () => {
           })
         : null}
 
+      {blogs.length === 0 &&
+      loading === false &&
+      searchKeywords.length !== 0 &&
+      selectedCompany !== ""
+        ? "No Blogs"
+        : null}
+
       {blogs.length > 0 && blogs.length === SHOW_MAX + 1 && (
         <Link
           to={`${ROUTE_HOME}?p=${searchedPage + 1}`}

@@ -1,19 +1,29 @@
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { selectedCompanyState } from "recoil/atoms";
+import { selectedCompanyState, selectedKeywordState } from "recoil/atoms";
+
+type InitResizeEventListenerReturnParam = {
+  ref: React.MutableRefObject<HTMLElement>;
+  type: "keyword" | "company";
+};
 
 export const initResizeEventListener = () => {
-  return (asideRef: React.MutableRefObject<HTMLElement>) => {
+  return ({ ref, type }: InitResizeEventListenerReturnParam) => {
     const [selectedCompany, setSelectedCompany] =
       useRecoilState(selectedCompanyState);
+    const [selectedKeyword, setSelectedKeyword] =
+      useRecoilState(selectedKeywordState);
 
     useEffect(() => {
       const handleWindowResize = () => {
-        if (
-          getComputedStyle(asideRef.current).display === "none" &&
-          selectedCompany !== ""
-        ) {
-          setSelectedCompany("");
+        if (getComputedStyle(ref.current).display === "none") {
+          if (type === "keyword" && selectedKeyword !== "") {
+            setSelectedKeyword("");
+          }
+
+          if (type === "company" && selectedCompany !== "") {
+            setSelectedCompany("");
+          }
         }
       };
 
@@ -22,6 +32,13 @@ export const initResizeEventListener = () => {
       return () => {
         window.removeEventListener("resize", handleWindowResize);
       };
-    }, [asideRef, selectedCompany, setSelectedCompany]);
+    }, [
+      ref,
+      selectedCompany,
+      selectedKeyword,
+      setSelectedCompany,
+      setSelectedKeyword,
+      type,
+    ]);
   };
 };

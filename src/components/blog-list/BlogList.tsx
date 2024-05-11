@@ -1,21 +1,30 @@
 import React, { useEffect, useMemo } from "react";
 import styles from "./BlogList.module.scss";
 import { useRecoilValue } from "recoil";
-import { selectedCompanyState } from "recoil/atoms";
+import { selectedCompanyState, selectedKeywordState } from "recoil/atoms";
 import { useQuery } from "@apollo/client";
 import { GET_BLOGS } from "utils/constants/queries";
 import { Link, useSearchParams } from "react-router-dom";
 import { ROUTE_HOME } from "utils/constants/routes";
 import { Blog } from "components";
+import { KEYWORDS } from "utils/constants/keywords";
 
 const SHOW_MAX = 15;
 
 export const BlogList = () => {
   const selectedCompany = useRecoilValue(selectedCompanyState);
+  const selectedKeyword = useRecoilValue(selectedKeywordState);
   const [searchParam] = useSearchParams();
   const searchedPage = useMemo(() => {
     return Number(searchParam.get("p") ?? 0);
   }, [searchParam]);
+
+  const searchKeywords = useMemo(() => {
+    return (
+      KEYWORDS.find((keyword) => keyword.label === selectedKeyword)
+        ?.searchKeywords ?? []
+    );
+  }, [selectedKeyword]);
 
   const { data, loading } = useQuery(GET_BLOGS, {
     variables: {
@@ -23,6 +32,7 @@ export const BlogList = () => {
       offset: SHOW_MAX * searchedPage,
       filter: {
         forOrganization: selectedCompany,
+        searchKeywords: searchKeywords,
       },
     },
   });

@@ -13,8 +13,6 @@ import { isValidHttpUrl } from "utils/functions/isValidHttpUrl";
 import { useMutation } from "@apollo/client";
 import { CREATE_BLOG } from "utils/constants/mutations";
 import { getEncryptedMessage } from "utils/functions/getEncryptedMessage";
-import { logEvent } from "firebase/analytics";
-import { analytics } from "../../firebase";
 import { logPageViewEvent } from "hooks";
 
 const BLOG_INITIAL_VALUE = {

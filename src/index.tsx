@@ -4,10 +4,6 @@ import { RecoilRoot } from "recoil";
 import { App } from "./App";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { analytics } from "./firebase";
-import { logEvent } from "firebase/analytics";
-
-logEvent(analytics, "page_view");
 
 const client = new ApolloClient({
   uri: "https://interview-experience-backend.onrender.com/",

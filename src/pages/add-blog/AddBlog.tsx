@@ -13,6 +13,9 @@ import { isValidHttpUrl } from "utils/functions/isValidHttpUrl";
 import { useMutation } from "@apollo/client";
 import { CREATE_BLOG } from "utils/constants/mutations";
 import { getEncryptedMessage } from "utils/functions/getEncryptedMessage";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../../firebase";
+import { logPageViewEvent } from "hooks";
 
 const BLOG_INITIAL_VALUE = {
   author: {
@@ -25,6 +28,8 @@ const BLOG_INITIAL_VALUE = {
 };
 
 export function AddBlog() {
+  logPageViewEvent()("Add Blog");
+
   const [blogInfo, setBlogInfo] = useState(BLOG_INITIAL_VALUE);
   const [error, setError] = useState({});
   const [createBlog, { loading, data, error: customError }] =

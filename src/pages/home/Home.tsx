@@ -1,10 +1,12 @@
 import { BlogList, CompanyFilter, KeywordFilter } from "components";
-import { initResizeEventListener } from "hooks";
+import { initResizeEventListener, logPageViewEvent } from "hooks";
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ROUTE_HOME } from "utils/constants/routes";
 
 export function Home() {
+  logPageViewEvent()("Home");
+
   const rightAsideRef = useRef<HTMLElement>();
   const leftAsideRef = useRef<HTMLElement>();
 

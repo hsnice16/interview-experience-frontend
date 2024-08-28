@@ -1,8 +1,11 @@
+import { logPageViewEvent } from "hooks";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ROUTE_ABOUT } from "utils/constants/routes";
 
 export function About() {
+  logPageViewEvent()("About");
+
   useEffect(() => {
     window.scroll({ top: 0, behavior: "smooth" });
   }, []);

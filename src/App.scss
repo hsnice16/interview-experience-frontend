@@ -93,6 +93,48 @@ main {
       opacity: 0.75;
     }
   }
+
+  &.main-stripe {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 100rem;
+    margin: 0 auto;
+    color: variables.$text-color-700;
+
+    h1,
+    h4,
+    h3 {
+      color: variables.$text-color-600;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    a {
+      color: variables.$primary-color;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+      }
+    }
+
+    ol {
+      margin-left: 2rem;
+
+      li {
+        margin: 1rem 0;
+      }
+    }
+
+    .email {
+      margin-top: 7rem;
+      margin-bottom: 3rem;
+    }
+  }
 }
 
 aside {

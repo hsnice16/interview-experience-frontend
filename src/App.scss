@@ -33,6 +33,33 @@ a {
   min-height: 100vh;
 }
 
+.banner {
+  max-width: 132rem;
+  margin: 1rem auto 0;
+  text-align: center;
+  padding: 0.75rem 0;
+  color: variables.$white-color;
+  background: linear-gradient(
+    90deg,
+    variables.$primary-color 0%,
+    variables.$primary-color-500 50%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  a {
+    border: thin solid variables.$white-color;
+    background: variables.$white-color;
+    color: variables.$primary-color;
+    border-radius: 0.5rem;
+    padding: 0.25rem 1rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
 header {
   grid-area: 1/1/1/-1;
   padding: 2rem 2rem 0;
@@ -106,6 +133,10 @@ footer {
 }
 
 @media screen and (max-width: 39.5em) {
+  .banner {
+    display: none;
+  }
+
   .container {
     grid-template-rows: 12rem 5rem 1fr auto;
   }

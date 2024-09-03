@@ -17,18 +17,28 @@ import { BlankPage } from "pages/BlankPage";
 
 export const App = (): React.ReactElement => {
   return (
-    <div className="container">
-      <Routes>
-        <Route path={ROUTE_HOME} element={<Home />} />
-        <Route path={ROUTE_ADD_BLOG} element={<AddBlog />} />
-        <Route path={ROUTE_ABOUT} element={<About />} />
-        <Route path={ROUTE_PROTECTED} element={<Dashboard />} />
-        <Route path={ROUTE_OTHER} element={<BlankPage />} />
-      </Routes>
+    <>
+      <div className="banner">
+        <strong>Keep the Preparation Going!</strong> Help maintain this project
+        with just a $1 contribution
+        <a href="/" target="_blank">
+          Stripe
+        </a>
+      </div>
 
-      <footer>
-        <FooterLinks />
-      </footer>
-    </div>
+      <div className="container">
+        <Routes>
+          <Route path={ROUTE_HOME} element={<Home />} />
+          <Route path={ROUTE_ADD_BLOG} element={<AddBlog />} />
+          <Route path={ROUTE_ABOUT} element={<About />} />
+          <Route path={ROUTE_PROTECTED} element={<Dashboard />} />
+          <Route path={ROUTE_OTHER} element={<BlankPage />} />
+        </Routes>
+
+        <footer>
+          <FooterLinks />
+        </footer>
+      </div>
+    </>
   );
 };

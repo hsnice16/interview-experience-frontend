@@ -1,6 +1,23 @@
+import { analytics } from "../../firebase";
+import { logEvent } from "firebase/analytics";
+import { logPageViewEvent } from "hooks";
 import React from "react";
 
 export function Stripe() {
+  logPageViewEvent()("Stripe");
+
+  const sponsorCheckout = () => {
+    logEvent(analytics, "set_checkout_option", {
+      checkout_option: "sponsor",
+    });
+  };
+
+  const upiCheckout = () => {
+    logEvent(analytics, "set_checkout_option", {
+      checkout_option: "upi",
+    });
+  };
+
   return (
     <main className="main main-add-blog main-stripe">
       <h1>Thank you for considering a contribution!</h1>
@@ -24,6 +41,7 @@ export function Stripe() {
             href="https://github.com/sponsors/hsnice16"
             target="_blank"
             rel="noreferrer"
+            onClick={sponsorCheckout}
           >
             github.com/sponsors/hsnice16
           </a>
@@ -36,6 +54,7 @@ export function Stripe() {
             href={process.env.REACT_APP_QR_CODE}
             target="_blank"
             rel="noreferrer"
+            onClick={upiCheckout}
           >
             QR code
           </a>{" "}

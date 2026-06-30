@@ -46,6 +46,8 @@ yarn start
 
 ---
 
+## 👀 How it looks
+
 <img width="1440" alt="Screenshot 2024-02-24 at 2 04 36 PM" src="https://github.com/hsnice16/interview-experience-frontend/assets/56081584/1b98557a-a4b1-474e-969e-c88237a3e39e">
 
 
@@ -63,3 +65,11 @@ yarn start
 
 
 </details>
+
+---
+
+## 💚 Sponsor
+
+If you found this project helpful, then do consider sponsoring it - [Sponsor](https://github.com/sponsors/hsnice16)
+
+And, give it a star 🌟

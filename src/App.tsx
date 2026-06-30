@@ -25,7 +25,7 @@ export const App = (): React.ReactElement => {
 
   return (
     <>
-      {isStripeRoute ? null : (
+      {/* {isStripeRoute ? null : (
         <div className="banner">
           <strong>Keep the Preparation Going!</strong> Help maintain this
           project with just a $1 contribution
@@ -33,7 +33,7 @@ export const App = (): React.ReactElement => {
             Stripe
           </a>
         </div>
-      )}
+      )} */}
 
       <div className="container">
         <Routes>

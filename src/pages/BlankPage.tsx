@@ -1,8 +1,14 @@
+import { Seo } from "components";
 import { logPageViewEvent } from "hooks";
 import React from "react";
 
 export function BlankPage() {
   logPageViewEvent()("Wrong Page");
 
-  return <div>Wrong page...</div>;
+  return (
+    <>
+      <Seo title="Page Not Found" noindex />
+      <div>Wrong page...</div>
+    </>
+  );
 }

@@ -1,7 +1,9 @@
 import { analytics } from "../../firebase";
 import { logEvent } from "firebase/analytics";
+import { Seo } from "components";
 import { logPageViewEvent } from "hooks";
 import React from "react";
+import { ROUTE_STRIPE } from "utils/constants/routes";
 
 export function Stripe() {
   logPageViewEvent()("Stripe");
@@ -20,6 +22,8 @@ export function Stripe() {
 
   return (
     <main className="main main-add-blog main-stripe">
+      <Seo title="Support the Project" path={ROUTE_STRIPE} noindex />
+
       <h1>Thank you for considering a contribution!</h1>
       <p>
         Your support helps maintain and keep this project running smoothly.{" "}

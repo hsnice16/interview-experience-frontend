@@ -1,0 +1,22 @@
+# Tech Interview Experience
+
+> A free, community-driven directory of real tech interview-experience blogs from companies like Google, Microsoft, and Atlassian. Visitors browse and filter shared interview write-ups by company and keyword to help prepare for software-engineering interviews. Anyone can submit a blog link, which is reviewed by a moderator before it goes live.
+
+Important notes for LLMs and agents:
+
+- This is a single-page React app (no server-side rendering). The blog listing is loaded client-side from a GraphQL API, so the raw HTML of the pages below does not contain the blog content — it must be rendered with JavaScript to see the live list.
+- Each listed "blog" is an **external link** to the author's original post (Medium, personal site, etc.), not an internal page on this site.
+- Canonical site: https://techinterviewexp.site/
+
+## Pages
+
+- [Home](https://techinterviewexp.site/): Browse and filter the full list of tech interview-experience blogs by company and by keyword.
+- [About](https://techinterviewexp.site/about): What the project is, its purpose, and how submissions are reviewed.
+- [Add Blog](https://techinterviewexp.site/add-blog): Submit your own interview-experience blog (company, link, and author details) for moderation.
+
+## Resources
+
+- [Frontend source (GitHub)](https://github.com/hsnice16/interview-experience-frontend): React + TypeScript SPA that powers this site.
+- [Backend source (GitHub)](https://github.com/hsnice16/interview-experience-backend): GraphQL API (Apollo Server) backing the blog directory.
+- [Maintainer](https://twitter.com/hsnice16): Himanshu Singh — building in public as @hsnice16.
+- [Sponsor](https://github.com/sponsors/hsnice16): Support continued maintenance of the project.

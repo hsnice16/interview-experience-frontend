@@ -1,6 +1,7 @@
-import { InternalDashboard } from "components";
+import { InternalDashboard, Seo } from "components";
 import React, { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
+import { ROUTE_PROTECTED } from "utils/constants/routes";
 
 export function Dashboard() {
   const [searchParam] = useSearchParams();
@@ -12,5 +13,10 @@ export function Dashboard() {
     return null;
   }
 
-  return <InternalDashboard />;
+  return (
+    <>
+      <Seo title="Dashboard" path={ROUTE_PROTECTED} noindex />
+      <InternalDashboard />
+    </>
+  );
 }

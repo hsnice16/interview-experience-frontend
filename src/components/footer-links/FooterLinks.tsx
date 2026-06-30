@@ -69,6 +69,33 @@ export const FooterLinks = () => {
           </li>
         ))}
       </ul>
+
+      <div className={styles.badges}>
+        <a
+          href="https://peerlist.io/hsnice16/project/interview-experience"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src="https://peerlist.io/api/v1/projects/embed/PRJHR86ON886O8PQ9CRLRDPDQGLJGE?showUpvote=true&theme=light"
+            alt="Interview Experience on Peerlist"
+            style={{ width: "auto", height: "72px" }}
+          />
+        </a>
+
+        <a
+          href="https://www.producthunt.com/products/interview-experience?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-interview-experience"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=460316&theme=light&t=1782838129473"
+            alt="Interview Experience - List of Tech Interview Experience blogs. | Product Hunt"
+            width={250}
+            height={54}
+          />
+        </a>
+      </div>
     </>
   );
 };

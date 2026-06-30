@@ -6,3 +6,4 @@ export { MessageModal } from "./message-modal/MessageModal";
 export { InternalDashboard } from "./internal-dashboard/InternalDashboard";
 export { Blog } from "./blog/Blog";
 export { KeywordFilter } from "./keyword-filter/KeywordFilter";
+export { Seo } from "./seo/Seo";

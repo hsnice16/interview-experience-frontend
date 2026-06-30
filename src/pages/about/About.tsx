@@ -1,3 +1,4 @@
+import { Seo } from "components";
 import { logPageViewEvent } from "hooks";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -12,6 +13,12 @@ export function About() {
 
   return (
     <>
+      <Seo
+        title="About"
+        path={ROUTE_ABOUT}
+        description="About Tech Interview Experience — a free, community-driven platform where people share real tech interview experiences from companies like Google, Microsoft, and Atlassian to help others prepare."
+      />
+
       <header>
         <Link to={ROUTE_ABOUT}>
           <h1 className="heading">About</h1>

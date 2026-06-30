@@ -4,6 +4,7 @@ import { RecoilRoot } from "recoil";
 import { App } from "./App";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 const client = new ApolloClient({
   uri: "https://interview-experience-backend.onrender.com/",
@@ -13,15 +14,17 @@ const client = new ApolloClient({
 const router = createBrowserRouter([{ path: "*", Component: App }]);
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById("root") as HTMLElement,
 );
 
 root.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <RecoilRoot>
-        <RouterProvider router={router} />
-      </RecoilRoot>
-    </ApolloProvider>
-  </React.StrictMode>
+    <HelmetProvider>
+      <ApolloProvider client={client}>
+        <RecoilRoot>
+          <RouterProvider router={router} />
+        </RecoilRoot>
+      </ApolloProvider>
+    </HelmetProvider>
+  </React.StrictMode>,
 );

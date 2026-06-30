@@ -1,4 +1,4 @@
-import { BlogList, CompanyFilter, KeywordFilter } from "components";
+import { BlogList, CompanyFilter, KeywordFilter, Seo } from "components";
 import { initResizeEventListener, logPageViewEvent } from "hooks";
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
@@ -15,6 +15,8 @@ export function Home() {
 
   return (
     <>
+      <Seo path={ROUTE_HOME} />
+
       <header>
         <Link to={ROUTE_HOME}>
           <h1 className="heading">Interview Experience</h1>

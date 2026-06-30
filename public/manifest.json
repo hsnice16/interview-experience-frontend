@@ -1,0 +1,18 @@
+{
+  "scope": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "short_name": "Interview Exp",
+  "name": "Tech Interview Experience",
+  "description": "Read and share real tech interview experiences from companies like Google, Microsoft, Atlassian, and many more.",
+  "icons": [
+    {
+      "purpose": "any",
+      "src": "/IE.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -8,7 +8,7 @@ import React, {
 import { Link } from "react-router-dom";
 import styles from "./AddBlog.module.scss";
 import { ROUTE_ADD_BLOG } from "utils/constants/routes";
-import { MessageModal, CustomInput } from "components";
+import { MessageModal, CustomInput, Seo } from "components";
 import { isValidHttpUrl } from "utils/functions/isValidHttpUrl";
 import { useMutation } from "@apollo/client";
 import { CREATE_BLOG } from "utils/constants/mutations";
@@ -94,6 +94,12 @@ export function AddBlog() {
 
   return (
     <>
+      <Seo
+        title="Add Your Interview Experience"
+        path={ROUTE_ADD_BLOG}
+        description="Share your tech interview experience to help others prepare. Submit the company, your blog link, and author details — the team reviews every submission before it goes live."
+      />
+
       {showMessageModal ? (
         <MessageModal
           error={customError}

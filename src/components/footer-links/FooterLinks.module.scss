@@ -30,6 +30,28 @@
   }
 }
 
+.badges {
+  grid-area: 2/1/2/-1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem 2rem;
+  margin-top: 4rem;
+
+  a {
+    display: inline-flex;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 45em) {
+    margin-top: 3rem;
+  }
+}
+
 .list {
   list-style: none;
 

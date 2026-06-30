@@ -36,8 +36,40 @@ export const KEYWORDS = [
     searchKeywords: [
       "machine learning",
       "ml",
+      "mle",
+      "deep learning",
       "data science",
       "data scientist",
+    ],
+  },
+  {
+    label: "AI Engineer",
+    searchKeywords: [
+      "ai engineer",
+      "ai/ml",
+      "artificial intelligence",
+      "generative ai",
+      "gen ai",
+      "llm",
+    ],
+  },
+  {
+    label: "Applied Scientist",
+    searchKeywords: [
+      "applied scientist",
+      "applied science",
+      "research scientist",
+      "research engineer",
+    ],
+  },
+  {
+    label: "Forward Deployed",
+    searchKeywords: [
+      "forward deployed",
+      "forward deployed engineer",
+      "forward deployed software engineer",
+      "fde",
+      "fdse",
     ],
   },
   {
